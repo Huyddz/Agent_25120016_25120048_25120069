@@ -5,16 +5,16 @@
 int main() {
     std::cout << "Starting OllamaClient test..." << std::endl;
 
-    // Replace with your active ngrok/pinggy URL or local endpoint
-    std::string ollama_url = "https://835c-130-211-229-253.ngrok-free.app/v1"; 
-    std::string model = "qwen2.5"; 
+    // Use teacher's URL
+    std::string ollama_url = "https://blinks-radar-grandma.ngrok-free.dev"; // ensure the Kaggle still runs.
+    std::string model = "qwen3.8:27b"; 
 
     try {
         OllamaClient client(ollama_url, model);
 
         std::vector<ChatMessage> test_messages = {
             {"system", "You are a helpful assistant."},
-            {"user", "Say 'Hello from Ollama' and nothing else."}
+            {"user", "Why did Tang dynasty collapse?"}
         };
 
         std::cout << "Sending test request..." << std::endl;

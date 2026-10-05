@@ -23,8 +23,13 @@ std::string OllamaClient::sendHttpPost(const std::string& endpoint, const std::s
     std::string response_data;
     struct curl_slist* headers = nullptr;
     headers = curl_slist_append(headers, "Content-Type: application/json");
+    // Add ngrok header to bypass browser warning
+    headers = curl_slist_append(headers, "ngrok-skip-browser-warning: true");
+    // just in case
 
     std::string url = baseURL + endpoint;
+    // Debugging output
+    std::cout << "[DEBUG] Target URL: " << url << std::endl;
     curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
     curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json_payload.c_str());
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
