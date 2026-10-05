@@ -14,7 +14,7 @@ int main() {
 
         std::vector<ChatMessage> test_messages = {
             {"system", "You are a helpful assistant."},
-            {"user", "Why did Tang dynasty collapse?"}
+            {"user", "Write a brief history about Vietnamese GDP growth."}
         };
 
         std::cout << "Sending test request..." << std::endl;

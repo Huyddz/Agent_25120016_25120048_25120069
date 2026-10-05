@@ -28,8 +28,8 @@ std::string OllamaClient::sendHttpPost(const std::string& endpoint, const std::s
     // just in case
 
     std::string url = baseURL + endpoint;
-    // Debugging output
-    std::cout << "[DEBUG] Target URL: " << url << std::endl;
+    // Debugging output (to check the URL being used)
+    std::cout << "Target URL: " << url << std::endl;
     curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
     curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json_payload.c_str());
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
